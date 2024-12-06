@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {OrderBook} from "../src/OrderBook.sol";
+import {WeatherNft} from "../src/WeatherNft.sol";
 
 contract CounterScript is Script {
-    OrderBook public orderBook;
+    WeatherNft public weatherNft;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        orderBook = new OrderBook(address(0), address(0));
+        weatherNft = new WeatherNft(address(this), "WeatherNft", "WNFT");
 
         vm.stopBroadcast();
     }
